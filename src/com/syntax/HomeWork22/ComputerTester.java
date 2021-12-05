@@ -3,7 +3,7 @@ package com.syntax.HomeWork22;
 public class ComputerTester {
     public static void main(String[] args) {
 
-
+                            //creating objects of classes
         Computer[] computers = {new Apple("Apple", 2000), new Lenovo("Lenovo", 1500), new Dell("Dell", 1100), new HP("HP", 1300)};
 
 
