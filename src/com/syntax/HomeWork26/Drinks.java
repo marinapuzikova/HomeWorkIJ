@@ -11,16 +11,27 @@ public class Drinks {
         List<String> drinks = new ArrayList<>();
         drinks.add("coffee");
         drinks.add("milk");
-        drinks.add("orange Juice");
+        drinks.add("Orange Juice");
         drinks.add("tea");
-
-        for (int i = 0; i < drinks.size(); i++) {
-            if (drinks.get(i).contains("a") || drinks.get(i).contains("e")) {
-                drinks.remove(drinks.get(i));
-                drinks.add(i, "water");
+//not changing the size of the list and updating the elements so we can NOT use enhanced forloop
+        /*for (int i = 0; i < drinks.size(); i++) {
+            if (drinks.get(i).toLowerCase().contains("a") || drinks.get(i).contains("e")) {
+                //drinks.remove(drinks.get(i));
+                //drinks.add(i, "water");
+                drinks.set(i,"water");
             }
         }
         System.out.println(drinks);
+
+         */
+        for (int i = 0; i < drinks.size(); i++) {//another way to solve thos task
+
+            if (drinks.get(i).toLowerCase().replaceAll("[ae]", "").length() < drinks.get(i).length()) {
+                drinks.set(i, "Water");
+            }
+        }
+        System.out.println(drinks);
+
     }
 }
 

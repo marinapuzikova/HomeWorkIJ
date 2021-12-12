@@ -8,8 +8,9 @@ public abstract class Insurance {
     and Class Pet has petType attribute. Create 3 objects of the sub classes and store them in ArrayList.
     Using for loop/advanced for loop/ iterator access all methods of the class.
      */
-    public String insuranceName;
-    Insurance(String insuranceName){
+    public String insuranceName;//whenever we have instance variable we should always create a Constructor
+
+    public Insurance(String insuranceName){
         this.insuranceName=insuranceName;
     }
     public abstract void getQuote();
@@ -18,7 +19,8 @@ public abstract class Insurance {
 
 class Car extends Insurance {
     String carModel;
-    Car(String insuranceName, String carModel) {
+    //String insuranceName if same name field is present in child class and parent class then we should use super keyword with field name
+    public Car(String insuranceName, String carModel) {
         super(insuranceName);
         this.carModel=carModel;
     }
@@ -27,12 +29,13 @@ class Car extends Insurance {
         System.out.println("We received "+insuranceName +" insurance quote for the car model " + carModel);
     }@Override
     public void cancelInsurance() {
+
         System.out.println(insuranceName + " for the car "+ carModel + " is cancelled.");
     }}
 
 class Pet extends Insurance {
     String petType;
-    Pet(String insuranceName, String petType) {
+    public Pet(String insuranceName, String petType) {
         super(insuranceName);
         this.petType=petType;
     }
@@ -45,7 +48,7 @@ class Pet extends Insurance {
     }}
 
 class Health extends Insurance {
-    Health(String insuranceName) {
+    public Health(String insuranceName) {
         super(insuranceName);}
     @Override
     public void getQuote() {

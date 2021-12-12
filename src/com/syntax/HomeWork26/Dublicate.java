@@ -14,9 +14,13 @@ public class Dublicate {
         aList.add("James");
         System.out.println("Original List:");
         System.out.println(aList);
-        HashSet<String> hashSet=new HashSet<>(aList);
-        System.out.println("Removing duplicates names:");
-        System.out.println(hashSet);
+        //HashSet<String> hashSet=new HashSet<>(aList);
+        //System.out.println("Removing duplicates names:");
+        //System.out.println(hashSet);
+        Set<String>set=new LinkedHashSet<>(aList);//set doesn't allow duplicates that's why they will be removed
+        System.out.println(set);
+        aList=new ArrayList<>(set);//we are getting back from set to list
+        System.out.println(aList);
 
     }
 

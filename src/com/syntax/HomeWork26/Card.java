@@ -11,10 +11,11 @@ public abstract class Card {
     double currentAPR;
     double balance;
     Card( String cardType) {
+
         this.cardType = cardType;
     }
     public void balance(){
-        this.balance=balance;
+
         System.out.println("Credit card "+cardType + " has a balance of " + balance);
     }
     abstract void aprFee();
