@@ -1,6 +1,8 @@
 package com.syntax.HomeWork26;
 
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Cities {
@@ -11,7 +13,7 @@ public class Cities {
     public static void main(String[] args) {
 
 
-        TreeSet<String> cities = new TreeSet<>();
+        Set<String> cities = new LinkedHashSet<>();
         cities.add("New York");
         cities.add("Moscow");
         cities.add("Rome");
