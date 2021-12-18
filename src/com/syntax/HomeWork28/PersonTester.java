@@ -15,5 +15,9 @@ public class PersonTester {
             Person person = personMap.get(key);
             System.out.println(key + " " + person.toString());
         }
+        for(Person per: personMap.values()){//retrieving values
+            System.out.println(per);
+
+        }
     }
 }

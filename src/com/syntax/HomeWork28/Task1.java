@@ -16,28 +16,27 @@ Print all values from a country map using for each loop and iterator.
         capitalMatch.put("Italy", "Rome");
         capitalMatch.put("Aruba", "Oranjestad");
         capitalMatch.put("Costa Rica", "San Jose");
-
-        Set<Map.Entry<String, String>> entrySet = capitalMatch.entrySet();
-        for (Map.Entry<String, String> entry : entrySet//printing all keys and values using for each loop
-        ) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        Set<String> keys = capitalMatch.keySet();
+        for (String key : keys) {
+            System.out.println("key is " + key + " and value is " + capitalMatch.get(key));
+        }
+        Iterator<String> iterator1= keys.iterator();
+        while (iterator1.hasNext()) {
+            String key= iterator1.next();
+            System.out.println("key is " + key + " and value is " + capitalMatch.get(key));
         }
 
-        Iterator<Map.Entry<String, String>> iterator = capitalMatch.entrySet().iterator();//printing all keys and values using for each loop
-        while (iterator.hasNext()) {
-            Map.Entry<String, String> entry = iterator.next();
-        }
-        System.out.println(capitalMatch);
-
-
+        //Printing all values from a country map using for each loop
         Collection<String> values = capitalMatch.values();// //print all values by Collection
-        System.out.println(values);
-        Iterator<String> iterator2 = capitalMatch.values().iterator();
+        for (String value : values) {
+            System.out.println(value);
+        }
+        //Printing all values from a country map using iterator.
+        Iterator<String> iterator2 = values.iterator();
         while (iterator2.hasNext()) {
             String value = iterator2.next();
-
+            System.out.println(value);
         }
-        System.out.println(capitalMatch);
     }
 
 }
